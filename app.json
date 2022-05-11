@@ -1,0 +1,59 @@
+{
+    "name": "Fake fed chats generator",
+    "description": "Generates fake chats automatically",
+    "keywords": "None",
+    "repository": "https://github.com/nidhirobot/fakefedchats",
+    "env": {
+        "APIID": {
+            "description": "API ID, Get from my.telegram.org.",
+            "required": true,
+            "value": ""
+        },
+        "APIH": {
+            "description": "API HASH, Get from my.telegram.org",
+            "required": true,
+            "value": ""
+        },
+        "SESSION": {
+            "description": "Pyrogram session.",
+            "required": true,
+            "value": ""
+        },
+        "CHANNELID": {
+            "description": "Private channel id. Note: ID must be joined that channel and having admin access",
+            "required": true,
+            "value": ""
+        },
+        "MESSAGEID": {
+            "description": "Message id from private channel id. Note: Not to delete that message. Always edit that message to change fed id",
+            "required": true,
+            "value": ""
+        },
+        "GROUPNAME": {
+            "description": "Group name (Optional)",
+            "required": false,
+            "value": ""
+        },
+        "BOTUNAME": {
+            "description": "Bot username (Optional if fed on @missrose_bot)",
+            "required": false,
+            "value": ""
+        },
+        "OID": {
+            "description": "Owner id",
+            "required": true,
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
